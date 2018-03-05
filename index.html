@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>수직상승</title>
+    <meta charset="utf-8">
+ <meta name="google-site-verification" content="RXuqmta_qQQggMyWerczeIstwZFqQMADTQIyhthQ6Eo" />
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-8418135145289790",
+    enable_page_level_ads: true
+  });
+</script>
+
+    <link rel="shortcut icon" href="/images/seda.png">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.pink-indigo.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="jquery-ui.min.css">
+    <style>
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        p, a {
+            font-size: 1.5em;
+        }
+        h5 {
+            font-size: 1.6em;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        .bg {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .pink {
+            color: #EFB9D1;
+        }
+        .black{
+            color: #000000;
+        }
+        .gray {
+            color: #707070;
+        }
+        .cycle-slideshow { width: 80%; min-width: 200px; margin: 10px auto; padding: 0; position: relative;
+        background: url(http://malsup.github.com/images/spinner.gif) 50% 50% no-repeat;
+
+        }
+
+        /* slideshow images (for most of the demos, these are the actual "slides") */
+        .cycle-slideshow img { 
+        /* 
+        some of these styles will be set by the plugin (by default) but setting them here
+        helps avoid flash-of-unstyled-content
+        */
+        position: absolute; top: 0; left: 0;
+        width: 100%; padding: 0; display: block;
+        }
+
+        /* in case script does not load */
+        .cycle-slideshow img:first-child {
+        position: static; z-index: 100;
+        }
+
+        /* pager */
+        .cycle-pager { 
+        text-align: center; width: 100%; z-index: 500; position: absolute; top: 10px; overflow: hidden;
+        }
+        .cycle-pager span { 
+        font-family: arial; font-size: 50px; width: 16px; height: 16px; 
+        display: inline-block; color: #ddd; cursor: pointer; 
+        }
+        .cycle-pager span.cycle-pager-active { color: #D69746;}
+        .cycle-pager > * { cursor: pointer;}
+
+
+        /* caption */
+        .cycle-caption { position: absolute; color: white; bottom: 15px; right: 15px; z-index: 700; }
+
+
+        /* overlay */
+        .cycle-overlay { 
+        font-family: tahoma, arial;
+        position: absolute; bottom: 0; width: 100%; z-index: 600;
+        background: black; color: white; padding: 15px; opacity: .5;
+        }
+        /* prev / next links */
+        .cycle-prev, .cycle-next { position: absolute; top: 0; width: 30%; opacity: 0; filter: alpha(opacity=0); z-index: 800; height: 100%; cursor: pointer; }
+        .cycle-prev { left: 0;  background: url(http://malsup.github.com/images/left.png) 50% 50% no-repeat;}
+        .cycle-next { right: 0; background: url(http://malsup.github.com/images/right.png) 50% 50% no-repeat;}
+        .cycle-prev:hover, .cycle-next:hover { opacity: .7; filter: alpha(opacity=70) }
+
+        .disabled { opacity: .5; filter:alpha(opacity=50); }
+
+
+        /* display paused text on top of paused slideshow */
+        .cycle-paused:after {
+        content: 'Paused'; color: white; background: black; padding: 10px;
+        z-index: 500; position: absolute; top: 10px; right: 10px;
+        border-radius: 10px;
+        opacity: .5; filter: alpha(opacity=50);
+        }
+
+        /* 
+        media queries 
+        some style overrides to make things more pleasant on mobile devices
+        */
+
+        @media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+        .cycle-slideshow { width: 200px;}
+        .cycle-overlay { padding: 4px }
+        .cycle-caption { bottom: 4px; right: 4px }
+        }
+        .animate-bottom {
+            position: relative;
+            -webkit-animation-name: animatebottom;
+            -webkit-animation-duration: 1s;
+            animation-name: animatebottom;
+            animation-duration: 1s
+        }
+        @-webkit-keyframes animatebottom {
+            from { bottom:-100px; opacity:0 }
+            to { bottom:0px; opacity:1 }
+        }
+        @keyframes animatebottom {
+            from{ bottom:-100px; opacity:0 }
+            to{ bottom:0; opacity:1 }
+        }
+        @media screen and (max-width: 1024px){
+            .mdl-layout__header {
+                display: inherit;
+            }
+        }
+    </style>
+    </head>
+
+<body style="background-color:white">
+ <!-- Simple header with fixed tabs. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
+mdl-layout--fixed-tabs">
+<header class="mdl-layout__header" style="background-color:white">
+<div class="mdl-layout__header-row" style="background-color:white">
+<!-- Title -->
+<span class="mdl-layout-title" style="color:black">수직상승<b style="font-size:0.5em">-수학만점으로 가는 지름길</b></span>
+
+<div class="mdl-layout-spacer"></div>
+<nav class="mdl-navigation">
+  <a class="mdl-navigation__link" href="" style="color:black">홈</a>
+  <a class="mdl-navigation__link" href="" style="color:black">학습안내</a>
+  <a class="mdl-navigation__link" href="" style="color:black">학원소개</a>
+  <a class="mdl-navigation__link" href="" style="color:black">Q&A</a>
+</div>
+</nav>
+</div>
+</header>
+
+<main class="mdl-layout__content animate-bottom" style="width:100%;display:none;" id="main">
+    <div style="height:5em;"></div>
+    <div class="cycle-slideshow" data-cycle-fx=scrollHorz data-cycle-timeout=2000>
+        <div class="cycle-pager"></div>
+        <img src="images/student.png">
+        <img src="images/classroom.png">
+        <img src="images/teach.png">
+    </div>
+           <div id="b2" style="background-color:#ffffff;padding:3em;padding-top:7em;text-align:center;color:black;">
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone" style="text-align:center">
+                <p>우리학원을 빛낸 선배들</p>
+                <div class="cycle-slideshow" data-cycle-fx=scrollHorz data-cycle-timeout=2000 style="width:30%">
+                    <div class="cycle-pager"></div>
+                    <img src="images/student.png">
+                    <img src="images/classroom.png">
+                    <img src="images/teach.png">
+                </div>
+            </div>
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone" style="text-align:center">
+                <p style="font-size:1.5em">공지사항</p>
+                <table class="mdl-data-table mdl-js-data-table mdl-data-table center">
+                    <thead>
+                        <tr>
+                            <th class="mdl-data-table__cell--non-numeric" >제목</th>
+                            <th class="mdl-data-table__cell--non-numeric" >작성일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="mdl-data-table__cell--non-numeric">오늘은 공휴일이니 휴강합니다.</td>
+                            <td class="mdl-data-table__cell--non-numeric">2018.03.04</td>
+                        </tr>
+                        <tr>
+                            <td class="mdl-data-table__cell--non-numeric">오늘은 공휴일이니 휴강합니다.</td>
+                            <td class="mdl-data-table__cell--non-numeric">2018.03.04</td>
+                        </tr>
+                        <tr>
+                            <td class="mdl-data-table__cell--non-numeric">오늘은 공휴일이니 휴강합니다.</td>
+                            <td class="mdl-data-table__cell--non-numeric">2018.03.04</td>
+                        </tr>
+                        <tr>
+                            <td class="mdl-data-table__cell--non-numeric">오늘은 공휴일이니 휴강합니다.</td>
+                            <td class="mdl-data-table__cell--non-numeric">2018.03.04</td>
+                        </tr>
+                    </tbody>
+                </table>    
+            </div>
+            <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone" style="text-align:center">
+                <p style="font-size:1.5em">찾아오시는 길</p>
+                <div style="height:3em"></div>                
+                <img src="images/map.png" width="100%" style="max-width:128px; ">
+                <div style="height:1em"></div>  
+                <b class="black" style="font-size:0.7em">서울시 강남구 대치2동 도곡로 00빌딩 4층</b>
+            </div>
+        </div>
+        <br>
+    </div>
+    <div class="mdl-grid"></div>
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone" style="padding:5em;">
+        <div>
+            <h4><a href="mailto:nuos@gmail.com"><i class="material-icons" style= "color:black;">mail</i></a> sedaleon2017@gmail.com</h4>
+            <h4><a href="mailto:nuos@gmail.com"><i class="material-icons" style= "color:black;">mail</i></a> sedaleon2017@gmail.com</h4>
+        </div>
+    <div class="mdl-layout-spacer"></div>
+</div>
+</main>
+    <div id="loading" style="height:100%;background-color:#29434e;position:fixed;z-index:1;"></div>
+
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="http:/malsup.github.com/jquery.cycle2.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script>
+        window.onload = function(){
+            getreq();
+            document.getElementById("main").style.display = "";
+            document.getElementById("loading").style.display = "none";
+            var h = window.innerHeight;
+            $("a").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop:$(hash).offset().top
+                    }, 2000, 'easeInOutQuint');
+                }
+            });
+        }
+        function min(id) {
+            var child = document.getElementById(id);
+            child.classList.remove("mdl-shadow--2dp");
+            child.classList.add("mdl-shadow--12dp");
+            child.children[1].style.background = "rgba(0, 0, 0, 0.8)"
+        }
+        function mout(id) {
+            var child = document.getElementById(id);
+            child.classList.remove("mdl-shadow--12dp");
+            child.classList.add("mdl-shadow--2dp");
+            child.children[1].style.background = "rgba(0, 0, 0, 0.2)"
+        }
+        function corsreq(method, url) {
+            var xhr = new XMLHttpRequest();
+            if ("withCredentials" in xhr) {
+                xhr.open(method, url, true);
+            } else if (typeof XDomainRequest != "undefined") {
+                xhr = new XDomainRequest();
+                xhr.open(method, url);
+            } else {
+                xhr = null;
+            }
+            return xhr;
+        }
+        function getreq() {
+            var req = corsreq("get", "https://blockchain.info/q/getblockcount");
+            if (req) {
+                req.onload = function() {
+                    var distance = req.responseText;
+                    document.getElementById("clock").innerHTML = distance;
+                    if (distance < 0) {
+                        clearInterval(x);
+                        document.getElementById("ct").style.display = "none";
+                        document.getElementById("ct1").style.display = "";
+                    }
+                };
+                req.send();
+            }
+        }
+        //var countDownDate = new Date("Dec 23, 2017 00:00:00").getTime();
+        var x = setInterval(function() {
+            //var now = new Date().getTime();
+            //var distance = countDownDate - now;
+            //var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            //var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            //var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            //var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            //document.getElementById("clock").innerHTML = days + "d " + hours + "h "
+            //+ minutes + "m " + seconds + "s ";
+            getreq();
+        }, 60000);
+    </script>
+</body>
+</html>
+    
+    
+    
+    
