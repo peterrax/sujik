@@ -46,74 +46,68 @@
         .gray {
             color: #707070;
         }
-        .cycle-slideshow { width: 100%; min-width: 200px; margin: 10px auto; padding: 0; position: relative;
-        background: url(http://malsup.github.com/images/spinner.gif) 50% 50% no-repeat;
-
+        .slider-holder
+        {
+            width: 800px;
+            height: 400px;
+            background-color: yellow;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 0px;
+            text-align: center;
+            overflow: hidden;
         }
-
-        /* slideshow images (for most of the demos, these are the actual "slides") */
-        .cycle-slideshow img { 
-        /* 
-        some of these styles will be set by the plugin (by default) but setting them here
-        helps avoid flash-of-unstyled-content
-        */
-        position: absolute; top: 0; left: 0;
-        width: 100%; padding: 0; display: block;
+        
+        .image-holder
+        {
+            width: 2400px;
+            background-color: red;
+            height: 400px;
+            clear: both;
+            position: relative;
+            
+            -webkit-transition: left 2s;
+            -moz-transition: left 2s;
+            -o-transition: left 2s;
+            transition: left 2s;
         }
-
-        /* in case script does not load */
-        .cycle-slideshow img:first-child {
-        position: static; z-index: 100;
+        
+        .slider-image
+        {
+            float: left;
+            margin: 0px;
+            padding: 0px;
+            position: relative;
         }
-
-        /* pager */
-        .cycle-pager { 
-        text-align: center; width: 100%; z-index: 500; position: absolute; top: 10px; overflow: hidden;
+        
+        #slider-image-1:target ~ .image-holder
+        {
+            left: 0px;
         }
-        .cycle-pager span { 
-        font-family: arial; font-size: 50px; width: 16px; height: 16px; 
-        display: inline-block; color: #ddd; cursor: pointer; 
+        
+        #slider-image-2:target ~ .image-holder
+        {
+            left: -800px;
         }
-        .cycle-pager span.cycle-pager-active { color: #D69746;}
-        .cycle-pager > * { cursor: pointer;}
-
-
-        /* caption */
-        .cycle-caption { position: absolute; color: white; bottom: 15px; right: 15px; z-index: 700; }
-
-
-        /* overlay */
-        .cycle-overlay { 
-        font-family: tahoma, arial;
-        position: absolute; bottom: 0; width: 100%; z-index: 600;
-        background: black; color: white; padding: 15px; opacity: .5;
+        
+        #slider-image-3:target ~ .image-holder
+        {
+            left: -1600px;
         }
-        /* prev / next links */
-        .cycle-prev, .cycle-next { position: absolute; top: 0; width: 30%; opacity: 0; filter: alpha(opacity=0); z-index: 800; height: 100%; cursor: pointer; }
-        .cycle-prev { left: 0;  background: url(http://malsup.github.com/images/left.png) 50% 50% no-repeat;}
-        .cycle-next { right: 0; background: url(http://malsup.github.com/images/right.png) 50% 50% no-repeat;}
-        .cycle-prev:hover, .cycle-next:hover { opacity: .7; filter: alpha(opacity=70) }
-
-        .disabled { opacity: .5; filter:alpha(opacity=50); }
-
-
-        /* display paused text on top of paused slideshow */
-        .cycle-paused:after {
-        content: 'Paused'; color: white; background: black; padding: 10px;
-        z-index: 500; position: absolute; top: 10px; right: 10px;
-        border-radius: 10px;
-        opacity: .5; filter: alpha(opacity=50);
+        
+        .button-holder
+        {
+            position: relative;
+            top: -20px;
         }
-
-        /* 
-        media queries 
-        some style overrides to make things more pleasant on mobile devices
-        */
-
-        @media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
-        .cycle-slideshow { width: 200px;}
-        .cycle-overlay { padding: 4px }
-        .cycle-caption { bottom: 4px; right: 4px }
+        
+        .slider-change
+        {
+            display: inline-block;
+            height: 10px;
+            width: 10px;
+            border-radius: 5px;
+            background-color: brown;
         }
         .animate-bottom {
             position: relative;
@@ -160,12 +154,13 @@ mdl-layout--fixed-tabs">
 
 <main class="mdl-layout__content animate-bottom" style="width:100%;display:none;" id="main">
     <div style="height:3em;"></div>
-    <div class="cycle-slideshow" data-cycle-fx=scrollHorz data-cycle-timeout=2000>
+    <div class="cycle-slideshow" data-cycle-fx=scrollHorz data-cycle-timeout=2000 >
         <div class="cycle-pager"></div>
-        <img src="images/student.png">
-        <img src="images/classroom.png">
-        <img src="images/teach.png">
+        <img src="images/student.png" style="width:100%">
+        <img src="images/classroom.png" style="width:100%">
+        <img src="images/teach.png" style="width:100%">
     </div>
+    <div class="height:5em"></div>
            <div id="b2" style="background-color:#ffffff;padding:3em;padding-top:7em;text-align:center;color:black; height:5em;">
         <div class="mdl-grid">
             <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--2-col-phone" style="text-align:center">
@@ -216,11 +211,12 @@ mdl-layout--fixed-tabs">
         </div>
         <br>
     </div>
+    <div class="height:6em"></div>
     <div class="mdl-grid"></div>
     <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone" style="padding:5em; height:5em;">
         <div>
-            <h4><a href="mailto:nuos@gmail.com"><i class="material-icons" style= "color:black;">mail</i></a> sedaleon2017@gmail.com</h4>
-            <h4><a href="mailto:nuos@gmail.com"><i class="material-icons" style= "color:black;">mail</i></a> sedaleon2017@gmail.com</h4>
+            <h4><a href="mailto:nuos@gmail.com"><i class="material-icons" style= "color:black;">mail</i></a> nuos@gmail.com</h4>
+            <h4><a href="mailto:nuos@gmail.com"><i class="material-icons" style= "color:black;">mail</i></a> nuos@gmail.com</h4>
         </div>
     <div class="mdl-layout-spacer"></div>
 </div>
